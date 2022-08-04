@@ -7,6 +7,8 @@ use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class LaravelValidationAttributesServiceProvider extends PackageServiceProvider
 {
+
+
     public function configurePackage(Package $package): void
     {
         /*
@@ -15,5 +17,8 @@ class LaravelValidationAttributesServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-validation-attributes')
             ->hasConfigFile();
+
+        $router = $this->app['router'];
+        $router->aliasMiddleware('valid-attr', ValidationAttributesMiddleware::class);
     }
 }
