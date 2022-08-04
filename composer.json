@@ -1,0 +1,63 @@
+{
+    "name": "uzbek/laravel-validation-attributes",
+    "description": "Laravel validation attributes",
+    "keywords": [
+        "uzbek",
+        "laravel",
+        "laravel-validation-attributes"
+    ],
+    "homepage": "https://github.com/uzbek/laravel-validation-attributes",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Inoyatulloh",
+            "email": "mronx@ya.ru",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "spatie/laravel-package-tools": "^1.9.2",
+        "illuminate/contracts": "^9.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^6.0",
+        "orchestra/testbench": "^7.0",
+        "pestphp/pest": "^1.21",
+        "pestphp/pest-plugin-laravel": "^1.1",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Uzbek\\LaravelValidationAttributes\\": "src",
+            "Uzbek\\LaravelValidationAttributes\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Uzbek\\LaravelValidationAttributes\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Uzbek\\LaravelValidationAttributes\\LaravelValidationAttributesServiceProvider"
+            ],
+            "aliases": {
+                "LaravelValidationAttributes": "Uzbek\\LaravelValidationAttributes\\Facades\\LaravelValidationAttributes"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
