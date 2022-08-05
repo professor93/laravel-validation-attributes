@@ -22,7 +22,7 @@ class ValidationAttributesMiddleware
      * @param \Closure(Request): (Response|RedirectResponse)  $next
      * @return Response|RedirectResponse
      */
-    public function handle(Request $request, Closure $next): Response|RedirectResponse
+    public function handle(Request $request, Closure $next)
     {
         if (config('validation-attributes.enabled', false) === true) {
             $validations = $this->validationsList();
