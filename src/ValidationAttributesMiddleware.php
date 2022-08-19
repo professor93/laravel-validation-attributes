@@ -19,7 +19,7 @@ class ValidationAttributesMiddleware
      * Handle an incoming request.
      *
      * @param Request $request
-     * @param \Closure(Request): (Response|RedirectResponse)  $next
+     * @param \Closure(Request): (Response|RedirectResponse) $next
      * @return Response|RedirectResponse
      */
     public function handle(Request $request, Closure $next)
@@ -108,18 +108,15 @@ class ValidationAttributesMiddleware
         $namespaceLine = array_shift($array);
         $match = [];
         preg_match('/^namespace (.*);$/', $namespaceLine, $match);
-        $fullNamespace = array_pop($match);
-
-        return $fullNamespace;
+        return array_pop($match);
     }
 
     private function getClassName($filename): ?string
     {
-        $directoriesAndFilename = explode('/', $filename);
+        $directoriesAndFilename = explode(DIRECTORY_SEPARATOR, $filename);
         $filename = array_pop($directoriesAndFilename);
         $nameAndExtension = explode('.', $filename);
-        $className = array_shift($nameAndExtension);
-        return $className;
+        return array_shift($nameAndExtension);
     }
 }
 
