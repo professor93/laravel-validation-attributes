@@ -78,7 +78,7 @@ class ValidationAttributesMiddleware
         $filenames = $this->getFilenames($path);
         $namespaces = [];
         foreach ($filenames as $filename) {
-            $namespaces[] = $this->getFullNamespace($filename) . '\\' . $this->getClassName($filename);
+            $namespaces[] = trim($this->getFullNamespace($filename) . '\\' . $this->getClassName($filename), '\\');
         }
         return $namespaces;
     }
