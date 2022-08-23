@@ -56,15 +56,15 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 Please see [CONTRIBUTING](https://github.com/professor93/.github/blob/main/CONTRIBUTING.md) for details.
 
-[//]: # (## Security Vulnerabilities)
+## Security Vulnerabilities
 
-[//]: # (Please review [our security policy]&#40;../../security/policy&#41; on how to report security vulnerabilities.)
+Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
 
 ## Credits
 
 - [Inoyatulloh](https://github.com/professor93)
 
-[//]: # (- [All Contributors]&#40;../../contributors&#41;)
+- [All Contributors](../../contributors)
 
 ## License
 
