@@ -1,12 +1,12 @@
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/support-ukraine.svg?t=1" />](https://supportukrainenow.org)
-
 # Laravel validation attributes
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/uzbek/laravel-validation-attributes.svg?style=flat-square)](https://packagist.org/packages/uzbek/laravel-validation-attributes)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/professor93/laravel-validation-attributes/run-tests?label=tests)](https://github.com/professor93/laravel-validation-attributes/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/professor93/laravel-validation-attributes/Check%20&%20fix%20styling?label=code%20style)](https://github.com/professor93/laravel-validation-attributes/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/uzbek/laravel-validation-attributes.svg?style=flat-square)](https://packagist.org/packages/uzbek/laravel-validation-attributes)
+[![Licence](https://img.shields.io/packagist/l/uzbek/laravel-validation-attributes?style=flat-square)](https://packagist.org/packages/uzbek/laravel-validation-attributes)
+
+[//]: # ([![GitHub Tests Action Status]&#40;https://img.shields.io/github/workflow/status/professor93/laravel-validation-attributes/run-tests?label=tests&#41;]&#40;https://github.com/professor93/laravel-validation-attributes/actions?query=workflow%3Arun-tests+branch%3Amain&#41;)
+[//]: # ([![GitHub Code Style Action Status]&#40;https://img.shields.io/github/workflow/status/professor93/laravel-validation-attributes/Check%20&%20fix%20styling?label=code%20style&#41;]&#40;https://github.com/professor93/laravel-validation-attributes/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain&#41;)
 
 
 ## Installation
