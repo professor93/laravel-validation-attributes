@@ -9,16 +9,16 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Cache;
 use ReflectionClass;
 use ReflectionMethod;
-use Symfony\Component\Finder\Finder;
 use Uzbek\LaravelValidationAttributes\Attributes\Validator;
 use Uzbek\LaravelValidationAttributes\Attributes\Validators;
+use function WyriHaximus\listClassesInDirectories;
 
 class ValidationAttributesMiddleware
 {
     /**
      * Handle an incoming request.
      *
-     * @param Request $request
+     * @param  Request  $request
      * @param \Closure(Request): (Response|RedirectResponse) $next
      * @return Response|RedirectResponse
      */
@@ -31,13 +31,14 @@ class ValidationAttributesMiddleware
                 $request->validate($rules);
             }
         }
+
         return $next($request);
     }
 
     public function validationsList(): array
     {
         return Cache::remember(config('validation-attributes.cache_name', 'laravel-validation-attributes'), config('validation-attributes.cache_time', 10), function () {
-            $classes = $this->getAllNameSpaces(config('validation-attributes.directories'));
+            $classes = listClassesInDirectories(...config('validation-attributes.directories'));
             $items = [];
 
             foreach ($classes as $class) {
@@ -63,7 +64,7 @@ class ValidationAttributesMiddleware
                             foreach ($rules as $rule) {
                                 $rl[$rule->name] = $rule->rules;
                             }
-                            $items[$classMethod->class . '@' . $classMethod->name] = $rl;
+                            $items[$classMethod->class.'@'.$classMethod->name] = $rl;
                         }
                     }
                 }
@@ -72,51 +73,4 @@ class ValidationAttributesMiddleware
             return $items;
         });
     }
-
-    public function getAllNameSpaces($path): array
-    {
-        $filenames = $this->getFilenames($path);
-        $namespaces = [];
-        foreach ($filenames as $filename) {
-            $namespaces[] = trim($this->getFullNamespace($filename) . '\\' . $this->getClassName($filename), '\\');
-        }
-        return $namespaces;
-    }
-
-    private function getFilenames($dirs): array
-    {
-        $filenames = [];
-        if (is_array($dirs)) {
-            foreach ($dirs as $dir) {
-                $filenames = array_merge($filenames, $this->getFilenames($dir));
-            }
-        } else {
-            $finder = new Finder();
-            $finder->files()->in($dirs)->name('*.php');
-            foreach ($finder as $file) {
-                $filenames[] = $file->getRealPath();
-            }
-        }
-
-        return $filenames;
-    }
-
-    private function getFullNamespace($filename)
-    {
-        $lines = file($filename);
-        $array = preg_grep('/^namespace /', $lines);
-        $namespaceLine = array_shift($array);
-        $match = [];
-        preg_match('/^namespace (.*);$/', $namespaceLine, $match);
-        return array_pop($match);
-    }
-
-    private function getClassName($filename): ?string
-    {
-        $directoriesAndFilename = explode(DIRECTORY_SEPARATOR, $filename);
-        $filename = array_pop($directoriesAndFilename);
-        $nameAndExtension = explode('.', $filename);
-        return array_shift($nameAndExtension);
-    }
 }
-

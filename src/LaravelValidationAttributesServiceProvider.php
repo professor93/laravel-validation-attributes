@@ -7,8 +7,6 @@ use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class LaravelValidationAttributesServiceProvider extends PackageServiceProvider
 {
-
-
     public function configurePackage(Package $package): void
     {
         /*

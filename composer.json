@@ -18,21 +18,21 @@
     "require": {
         "php": "^8.1",
         "illuminate/contracts": "^9.0",
-        "spatie/laravel-package-tools": "^1.9.2",
-        "symfony/finder": "^6.1"
+        "spatie/laravel-package-tools": "^1.12",
+        "symfony/finder": "^6.1",
+        "wyrihaximus/list-classes-in-directory": "^1.5"
     },
     "require-dev": {
-        "laravel/pint": "^1.0",
-        "nunomaduro/collision": "^6.0",
-        "orchestra/testbench": "^7.0",
+        "laravel/pint": "^1.1",
+        "nunomaduro/collision": "^6.2",
+        "orchestra/testbench": "^7.6",
         "pestphp/pest": "^1.21",
-        "pestphp/pest-plugin-laravel": "^1.1",
+        "pestphp/pest-plugin-laravel": "^1.2",
         "phpunit/phpunit": "^9.5"
     },
     "autoload": {
         "psr-4": {
-            "Uzbek\\LaravelValidationAttributes\\": "src",
-            "Uzbek\\LaravelValidationAttributes\\Database\\Factories\\": "database/factories"
+            "Uzbek\\LaravelValidationAttributes\\": "src"
         }
     },
     "autoload-dev": {
@@ -47,7 +47,10 @@
         "format": "vendor/bin/pint"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
     },
     "extra": {
         "laravel": {
