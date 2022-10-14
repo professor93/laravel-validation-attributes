@@ -20,6 +20,7 @@
         "illuminate/contracts": "^9.0",
         "spatie/laravel-package-tools": "^1.12",
         "symfony/finder": "^6.1",
+        "uzbek/laravel-attribute-scanner": "^0.1.0",
         "wyrihaximus/list-classes-in-directory": "^1.5"
     },
     "require-dev": {
@@ -58,7 +59,7 @@
                 "Uzbek\\LaravelValidationAttributes\\LaravelValidationAttributesServiceProvider"
             ],
             "aliases": {
-                "LaravelValidationAttributes": "Uzbek\\LaravelValidationAttributes\\Facades\\LaravelValidationAttributes"
+                "LaravelValidationAttributes": "ValidationAttributes"
             }
         }
     },

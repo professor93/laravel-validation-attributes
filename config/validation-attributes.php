@@ -15,7 +15,7 @@ return [
     /*
      *  Cache expiry time
      */
-    'cache_time' => 10,
+    'cache_time' => 60, // 60 seconds - 1 minute
 
     /*
      * Controllers in these directories that have validation attributes

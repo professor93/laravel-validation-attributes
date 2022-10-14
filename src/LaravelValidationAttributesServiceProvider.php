@@ -12,9 +12,8 @@ class LaravelValidationAttributesServiceProvider extends PackageServiceProvider
         /*
          * This class is a Package Service Provider
          */
-        $package
-            ->name('laravel-validation-attributes')
-            ->hasConfigFile();
+        $package->name('laravel-validation-attributes')->hasConfigFile();
+        $this->app->singleton(LaravelValidationAttributes::class, fn () => new LaravelValidationAttributes);
 
         $router = $this->app['router'];
         $router->aliasMiddleware('valid-attr', ValidationAttributesMiddleware::class);
