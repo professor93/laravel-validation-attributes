@@ -19,9 +19,7 @@
         "php": "^8.1",
         "illuminate/contracts": "^9.0",
         "spatie/laravel-package-tools": "^1.13",
-        "symfony/finder": "^6.1",
-        "uzbek/laravel-attribute-scanner": "^0.1.5",
-        "wyrihaximus/list-classes-in-directory": "^1.5"
+        "uzbek/laravel-attribute-scanner": "^0.1.5"
     },
     "require-dev": {
         "laravel/pint": "^1.1",
@@ -57,10 +55,7 @@
         "laravel": {
             "providers": [
                 "Uzbek\\LaravelValidationAttributes\\LaravelValidationAttributesServiceProvider"
-            ],
-            "aliases": {
-                "LaravelValidationAttributes": "ValidationAttributes"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",
