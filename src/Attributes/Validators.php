@@ -9,8 +9,15 @@ class Validators
 {
     public array $items = [];
 
-    public function __construct(array $rules)
+    public function __construct(array|string $key, array|string|null $rules = null)
     {
+        if(is_array($key)){
+            $rules = $key;
+        } elseif (is_string($key) && $rules !== null) {
+            $rules = [$key => $rules];
+        } else {
+            $rules = [];
+        }
         if (count($rules) > 0) {
             foreach ($rules as $key => $rule) {
                 if (is_string($key) && (is_string($rule) || (is_array($rule) && count($rule) > 0))) {

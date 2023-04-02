@@ -13,7 +13,7 @@ class ValidationAttributesMiddleware
     /**
      * Handle an incoming request.
      *
-     * @param  Request  $request
+     * @param Request $request
      * @param \Closure(Request): (Response|RedirectResponse) $next
      * @return Response|RedirectResponse
      */
@@ -22,8 +22,8 @@ class ValidationAttributesMiddleware
         if (config('validation-attributes.enabled', false) === true) {
             $validations = ValidationAttributes::validationsList();
             if (isset($validations[$request->route()->getActionName()])) {
-                $rules = $validations[$request->route()->getActionName()];
-                $request->validate($rules);
+                LaravelValidationAttributes::$rules = $validations[$request->route()->getActionName()];
+                LaravelValidationAttributes::$validated = $request->validate(LaravelValidationAttributes::$rules);
             }
         }
 

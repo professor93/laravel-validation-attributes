@@ -17,22 +17,23 @@
     ],
     "require": {
         "php": "^8.1",
-        "illuminate/contracts": "^9.0",
-        "spatie/laravel-package-tools": "^1.13",
-        "uzbek/laravel-attribute-scanner": "^0.1.5"
+        "illuminate/contracts": "^9.0|^10.0",
+        "spatie/laravel-package-tools": "^1.14",
+        "uzbek/laravel-attribute-scanner": "^0.1"
     },
     "require-dev": {
-        "laravel/pint": "^1.1",
-        "nunomaduro/collision": "^6.2",
-        "orchestra/testbench": "^7.6",
-        "pestphp/pest": "^1.21",
-        "pestphp/pest-plugin-laravel": "^1.2",
-        "phpunit/phpunit": "^9.5"
+        "laravel/pint": "^1.7",
+        "nunomaduro/collision": "^6.4",
+        "orchestra/testbench": "^7.24",
+        "pestphp/pest": "^1.22",
+        "pestphp/pest-plugin-laravel": "^1.4",
+        "phpunit/phpunit": "^9.6"
     },
     "autoload": {
         "psr-4": {
             "Uzbek\\LaravelValidationAttributes\\": "src"
-        }
+        },
+        "files": ["src/helpers.php"]
     },
     "autoload-dev": {
         "psr-4": {

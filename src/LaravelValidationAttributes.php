@@ -11,6 +11,8 @@ use Uzbek\LaravelValidationAttributes\Attributes\Validators;
 
 class LaravelValidationAttributes
 {
+    public static array $validated = [];
+    public static array $rules = [];
     public function validationsList(): array
     {
         return Cache::remember(config('validation-attributes.cache_name', 'laravel-validation-attributes'), config('validation-attributes.cache_time', 60), function () {
